@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid20</title>
+</head>
+
+<body>
+
+    <script>
+        // Functional Programming
+
+        const area = function (radius) {
+            return Math.PI * radius * radius;
+        }
+
+        const circumference = function (radius) {
+            return Math.PI * radius * 2;
+        }
+
+        const diameter = function (radius) {
+            return radius * 2;
+        }
+
+        const radii = [3, 1, 4, 2];
+
+        Array.prototype.calculate = function (logic) {
+            const output = [];
+            for (let i = 0; i < this.length; i++) {
+                output.push(logic(this[i]));
+            }
+            return output;
+        }
+        // const calculate = function (radius, logic) {
+        //     const output = [];
+        //     for (let i = 0; i < radius.length; i++) {
+        //         output.push(logic(radius[i]));
+        //     }
+        //     return output;
+        // }
+
+        console.log(radii.map(area));
+        // console.log(radii.calculate(area));
+        // console.log(calculate(radii, area));
+
+        console.log(radii.map(circumference));
+        // console.log(calculate(radii, circumference));
+
+        console.log(radii.map(diameter));
+        // console.log(calculate(radii, diameter));
+    </script>
+</body>
+
+</html>
